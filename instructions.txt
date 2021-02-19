@@ -1,0 +1,7 @@
+Currently only user creation and simple home page are accessible as website.
+
+To access geolocation endpoint first create user by accessing 127.0.0.1:8000/index/ 
+and from there accessing registration form.
+Then using command line tool such as httpie or curl access api_token_auth/ endpoint 
+passing selected username and password as request parameters.
+Once token is obtained access myIP/ endpoint passing received token as parameter.

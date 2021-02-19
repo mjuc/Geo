@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from rest_framework_jwt.views import obtain_jwt_token
 import locationapi.views
 
 urlpatterns = [
-    path('myIP/', locationapi.views.MyLocationView.as_view()),
-    path('',locationapi.views.HomeView.home),
-    path('register/',locationapi.views.RegisterView.register)
+    path('myIP/', locationapi.views.MyLocationView.as_view(),name='myIP'),
+    path('index/',locationapi.views.home,name='home'),
+    path('register/',locationapi.views.register,name='register'),
+    path('api_token_auth/',obtain_jwt_token)
 ]
